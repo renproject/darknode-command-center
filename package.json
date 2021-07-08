@@ -63,7 +63,7 @@
         "ethereumjs-util": "^7.0.10",
         "filesize": "^6.1.0",
         "graphql": "^15.4.0",
-        "highcharts": "^8.2.2",
+        "highcharts": "^9.0.0",
         "highcharts-react-official": "^3.0.0",
         "history": "4.10.1",
         "immutable": "^4.0.0-rc.12",
