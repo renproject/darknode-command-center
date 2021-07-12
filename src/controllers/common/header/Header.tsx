@@ -102,9 +102,11 @@ export const Header = () => {
                 <div className="header--logo" />
             </Link>
             {renNetwork.name === "mainnet" ? (
+            <>
                 <div className="header--news">
                     <NewsBanner />
                 </div>
+            </>
             ) : (
                 <div className="new">
                     <div className="header--network">

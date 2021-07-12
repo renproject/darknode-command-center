@@ -30,7 +30,6 @@ import {
 import { Token, TokenString } from "../../../../lib/ethereum/tokens";
 import {
     base64StringToHexString,
-    hexStringToBase64String,
     sanitizeBase64String,
 } from "../../../../lib/general/encodingUtils";
 import { TokenAmount } from "../../../../lib/graphQL/queries/queries";
@@ -699,7 +698,7 @@ export const RenVmFeesBlockController: React.FC<Props> = ({
                             <h1>Withdraw earnings</h1>
                             <h2>for {nativeTokenSymbol}</h2>
                         </div>
-                        <div className="popup--content">
+                        <div className="popup--content popup--content--medium-height">
                             {stage === "configuration" && (
                                 <>
                                     <div className="field-wrapper">
@@ -844,8 +843,10 @@ export const RenVmFeesBlockController: React.FC<Props> = ({
                                                 {renVMHash ? (
                                                     <>
                                                         RenVM is processing your
-                                                        withdrawal request. This
-                                                        can take a few minutes.
+                                                        withdrawal request.{" "}
+                                                        <br />
+                                                        This can take a few
+                                                        minutes.
                                                     </>
                                                 ) : (
                                                     <>
@@ -868,17 +869,15 @@ export const RenVmFeesBlockController: React.FC<Props> = ({
                             )}
                         </div>
 
-                        {renVMHash ? (
-                            <div className="withdrawal-hash">
+                        <div className="popup--buttons">
+                            {Boolean(renVMHash) && (
                                 <ExternalLink
+                                    className="button button--alt"
                                     href={`${DEV_TOOLS}/tx/${renVMHash}`}
                                 >
                                     See transaction status. →
                                 </ExternalLink>
-                            </div>
-                        ) : null}
-
-                        <div className="popup--buttons">
+                            )}
                             {stage === "configuration" && (
                                 <button
                                     className="button button--white"

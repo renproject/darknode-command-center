@@ -101,7 +101,7 @@
     justify-content: center;
     align-items: center;
 
-    button {
+    button, a {
         width: 100%;
         height: 40px;
         border-radius: 4px;
@@ -114,6 +114,10 @@
             transform: translateY(-1px);
             box-shadow: 0 7px 14px rgba(0, 0, 0, 0.1),
                 0 3px 6px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        &.button--alt:hover:not(:disabled) {
+            color: #006fe8;
         }
 
         &:active:not(:disabled) {
@@ -135,7 +139,7 @@
             color: white;
         }
 
-        & + button {
+        & + button, a {
             margin-left: 20px;
         }
     }
@@ -206,6 +210,9 @@ $noWeb3Padding: 20px;
     font-size: 14px;
     text-align: left;
     margin: 48px 0;
+    &--medium-height {
+        height: 310px;
+    }
 }
 
 .popup--description {
